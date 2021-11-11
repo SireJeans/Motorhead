@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Public">
+      <UniqueIdentifier>{4d0758ac-5f9b-4234-9dca-c8a75feeb323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{32796add-570d-4097-a4ab-0a4e956742f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead">
+      <UniqueIdentifier>{dda67bd5-ca13-4f5e-9889-2679b1779a83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\Core">
+      <UniqueIdentifier>{8b4a24ab-0984-4e5e-8232-fbcb3b405108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\Engine">
+      <UniqueIdentifier>{734018a6-ce21-46de-9620-e650170b4b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Core">
+      <UniqueIdentifier>{70a80263-0cea-4503-a968-e2556c8192cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Engine">
+      <UniqueIdentifier>{44be9d8c-26e5-4cdb-bc01-8ef04e4759de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\Platform">
+      <UniqueIdentifier>{bcdb15f5-58b7-4575-9634-92fb47c43114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\MSWindows">
+      <UniqueIdentifier>{3e7e7e8f-5120-4ddf-babc-d20c98206671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\MSWindows">
+      <UniqueIdentifier>{1e0dee2e-f2df-49a6-b8b6-a574fa2ad13d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Private\Engine\Entity.cpp">
+      <Filter>Private\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\MSWindows\Platform.cpp">
+      <Filter>Private\MSWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Core\MotorString.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Core\Hash.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Core\MotorRandom.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Public\Motorhead\Common.h">
+      <Filter>Public\Motorhead</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\GenerationalID.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Containers.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MotorMath.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\PrimitiveTypes.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\StdIncludes.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\CoreCommon.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MotorString.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Engine\Entity.h">
+      <Filter>Public\Motorhead\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Engine\Component.h">
+      <Filter>Public\Motorhead\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Engine\TransformComponent.h">
+      <Filter>Public\Motorhead\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Engine\EngineCommon.h">
+      <Filter>Public\Motorhead\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MotorRandom.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Hash.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Platform\Window.h">
+      <Filter>Public\Motorhead\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Platform\PlatformCommon.h">
+      <Filter>Public\Motorhead\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\MSWindows\PlatformTypes.h">
+      <Filter>Public\Motorhead\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\MSWindows\MSWinCommon.h">
+      <Filter>Public\Motorhead\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\CoreMinimal.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\ExternalIncludes.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\CoreDefines.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\MSWindows\MSWinIncludes.h">
+      <Filter>Public\Motorhead\MSWindows</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

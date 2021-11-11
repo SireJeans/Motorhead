@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{61e602ef-801a-459f-8ba3-377edaf60130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{a1a2e6fd-c75d-4e8b-b6ec-83800603478d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{12ffc592-7e2f-4b20-b813-3e1b98a7c6a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="Engine\TestEntity.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\TestComponent.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TestRandom.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TestHash.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TestString.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\TestWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+</Project>
