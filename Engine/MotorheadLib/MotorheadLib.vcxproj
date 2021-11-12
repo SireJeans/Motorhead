@@ -27,10 +27,12 @@
     <ClInclude Include="Public\Motorhead\Core\ExternalIncludes.h" />
     <ClInclude Include="Public\Motorhead\Core\GenerationalID.h" />
     <ClInclude Include="Public\Motorhead\Core\Hash.h" />
+    <ClInclude Include="Public\Motorhead\Core\MessageBus.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorMath.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorString.h" />
     <ClInclude Include="Public\Motorhead\Core\PrimitiveTypes.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorRandom.h" />
+    <ClInclude Include="Public\Motorhead\Core\SmartPointer.h" />
     <ClInclude Include="Public\Motorhead\Core\StdIncludes.h" />
     <ClInclude Include="Public\Motorhead\Engine\Component.h" />
     <ClInclude Include="Public\Motorhead\Engine\EngineCommon.h" />
@@ -102,6 +104,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <AdditionalIncludeDirectories>$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -130,6 +133,7 @@
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
       <AdditionalIncludeDirectories>$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>

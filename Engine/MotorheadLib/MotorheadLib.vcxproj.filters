@@ -119,5 +119,11 @@
     <ClInclude Include="Public\Motorhead\Core\Delegate.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MessageBus.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\SmartPointer.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

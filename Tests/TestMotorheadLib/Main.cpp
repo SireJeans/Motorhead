@@ -4,7 +4,8 @@
 #define TEST_HASH 0
 #define TEST_STRING 0
 #define TEST_WINDOW 0
-#define TEST_DELEGATE 1
+#define TEST_DELEGATE 0
+#define TEST_MESSAGEBUS 1
 
 #if TEST_ENTITY == 1
 #include "Engine/TestEntity.h"
@@ -20,6 +21,8 @@
 #include "Platform/TestWindow.h"
 #elif TEST_DELEGATE == 1
 #include "Core/TestDelegate.h"
+#elif TEST_MESSAGEBUS == 1
+#include "Core/TestMessageBus.h"
 #else
 #error One of the test must be enabled
 #endif

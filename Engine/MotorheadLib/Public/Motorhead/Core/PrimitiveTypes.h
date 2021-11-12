@@ -26,6 +26,7 @@ constexpr u8 u8_invalid_val{ 0xffui8 };
 // Size type
 namespace motor::core {
 	using sizeT = std::size_t;
+	using type_id = std::type_index;
 }
 
 // ANSI & Wide characters
