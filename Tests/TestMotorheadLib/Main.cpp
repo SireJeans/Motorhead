@@ -1,9 +1,10 @@
 #define TEST_ENTITY 0
 #define TEST_COMPONENT 0
 #define TEST_RANDOM 0
-#define TEST_HASH 1
+#define TEST_HASH 0
 #define TEST_STRING 0
 #define TEST_WINDOW 0
+#define TEST_DELEGATE 1
 
 #if TEST_ENTITY == 1
 #include "Engine/TestEntity.h"
@@ -17,6 +18,8 @@
 #include "Core/TestString.h"
 #elif TEST_WINDOW == 1
 #include "Platform/TestWindow.h"
+#elif TEST_DELEGATE == 1
+#include "Core/TestDelegate.h"
 #else
 #error One of the test must be enabled
 #endif

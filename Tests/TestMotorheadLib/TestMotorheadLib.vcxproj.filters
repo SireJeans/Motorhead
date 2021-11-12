@@ -31,6 +31,7 @@
     <ClInclude Include="Platform\TestWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
+    <ClInclude Include="Core\TestDelegate.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

@@ -23,6 +23,7 @@
     <ClInclude Include="Public\Motorhead\Core\CoreCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreDefines.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreMinimal.h" />
+    <ClInclude Include="Public\Motorhead\Core\Delegate.h" />
     <ClInclude Include="Public\Motorhead\Core\ExternalIncludes.h" />
     <ClInclude Include="Public\Motorhead\Core\GenerationalID.h" />
     <ClInclude Include="Public\Motorhead\Core\Hash.h" />

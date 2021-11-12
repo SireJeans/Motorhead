@@ -17,3 +17,4 @@
 #include "MotorRandom.h"
 #include "MotorString.h"
 #include "Hash.h"
+#include "Delegate.h"
