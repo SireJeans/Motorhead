@@ -29,6 +29,15 @@ private:
 
 	void PrintResult() {
 		std::cout << "CRC=" << _result << "\n";
+		std::cout << core::GenerateHash("Pouët") << "\n";
+		std::cout << core::GenerateHash(L"Pouët") << "\n";
+		std::cout << core::GenerateHash(TXT("Pouët")) << "\n";
+		const charT* caca = TXT("CACAAAAAA!");
+		const charA* cacaA = "CACAAAAAA!";
+		const charW* cacaW = L"CACAAAAAA!";
+		std::cout << core::GenerateHash(caca) << "\n";
+		std::cout << core::GenerateHash(cacaA) << "\n";
+		std::cout << core::GenerateHash(cacaW) << "\n";
 	}
 
 	u32 _result{ 0 };

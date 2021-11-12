@@ -1,9 +1,9 @@
 #define TEST_ENTITY 0
 #define TEST_COMPONENT 0
 #define TEST_RANDOM 0
-#define TEST_HASH 0
+#define TEST_HASH 1
 #define TEST_STRING 0
-#define TEST_WINDOW 1
+#define TEST_WINDOW 0
 
 #if TEST_ENTITY == 1
 #include "Engine/TestEntity.h"

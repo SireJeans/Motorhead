@@ -3,6 +3,7 @@
 #include <string>
 
 #include "PrimitiveTypes.h"
+#include "Hash.h"
 
 namespace motor::core {
 
@@ -23,6 +24,105 @@ namespace motor::core {
 	core::string GetStringFromTable(StringID id);
 	core::wstring GetWideStrFromTable(StringID id);
 
+	namespace {
 
+		template <core::sizeT I>
+		struct CompileHash
+		{
+			template <core::sizeT N>
+			constexpr static inline u32 Generate(const charA(&str)[N])
+			{
+				return static_cast<u32>(static_cast<u64>(CompileHash<I - 1u>::Generate(str) ^ u32(str[I - 1u])) * 16777619ull);
+			}
+
+			template <core::sizeT N>
+			constexpr static inline u32 Generate(const charW(&str)[N])
+			{
+				return static_cast<u32>(static_cast<u64>(CompileHash<I - 1u>::Generate(str) ^ u32(str[I - 1u])) * 16777619ull);
+			}
+
+		};
+
+		template <>
+		struct CompileHash<0u>
+		{
+			template <core::sizeT N>
+			constexpr static inline u32 Generate(const charA(&str)[N])
+			{
+				return 2166136261u;
+			}
+
+			template <core::sizeT N>
+			constexpr static inline u32 Generate(const charW(&str)[N])
+			{
+				return 2166136261u;
+			}
+		};
+
+
+
+		template <typename T>
+		struct HashHelper {};
+
+		template <core::sizeT N>
+		struct HashHelper<charA[N]>
+		{
+			constexpr static inline u32 Generate(const charA(&str)[N])
+			{
+				return CompileHash<N - 1u>::Generate(str);
+			}
+		};
+
+		template <>
+		struct HashHelper<const charA*>
+		{
+			static inline u32 Generate(const charA* str)
+			{
+				return hash::Fnv1aHash(str);
+			}
+		};
+
+		template <core::sizeT N>
+		struct HashHelper<charW[N]>
+		{
+			constexpr static inline u32 Generate(const charW(&str)[N])
+			{
+				return CompileHash<N - 1u>::Generate(str);
+			}
+		};
+
+		template <>
+		struct HashHelper<const charW*>
+		{
+			static inline u32 Generate(const charW* str)
+			{
+				return hash::Fnv1aHash(str);
+			}
+		};
+	}
+
+	template <typename T>
+	constexpr static inline u32 GenerateHash(const T& str)
+	{
+		return HashHelper<T>::Generate(str);
+	}
+
+	class StringHash
+	{
+	public:
+		template <typename T>
+		StringHash(const T& str)
+			: _hash(GenerateHash(str))
+		{
+		}
+
+		inline u32 GetHash(void) const
+		{
+			return _hash;
+		}
+
+	private:
+		const u32 _hash;
+	};
 
 }
