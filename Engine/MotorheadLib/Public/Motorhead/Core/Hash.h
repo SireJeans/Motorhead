@@ -5,62 +5,53 @@
 
 namespace motor::hash {
 
+	u32 Crc32Hash(const void*, core::sizeT, u32 = 0);
+
 	u32 GetCrc(u32, u8*, core::sizeT);
 
-	inline u32 Fnv1aHash(u32 hash, const charA* str, core::sizeT length)
-	{
-		for (core::sizeT i = 0; i < length; ++i)
-		{
-			const u32 value = static_cast<u32>(*str++);
-			hash ^= value;
-			hash *= 16777619u;
-		}
+	constexpr u32 fnv_prime{ 16777619u };
+	constexpr u32 fnv_offset{ 2166136261u };
 
-		return hash;
+	inline u32 Fnv1aHash(const void* data, core::sizeT length, u32 hash = fnv_offset)
+	{
+		assert(data != nullptr);
+		u32 result = hash;
+		u8* current = (u8*)data;
+		while (length-- != 0) {
+			result ^= *current++;
+			result *= fnv_prime;
+		}
+		return result;
 	}
 
-	inline u32 Fnv1aHash(const charA* str, core::sizeT length)
+	inline u32 Fnv1aHash(const charA* str, core::sizeT length, u32 hash = fnv_offset)
 	{
-		assert(str != nullptr);
-		return Fnv1aHash(2166136261u, str, length);
+		return Fnv1aHash((void*)str, length,  hash);
 	}
 
 	inline u32 Fnv1aHash(const charA* str)
 	{
 		assert(str != nullptr);
-		core::sizeT len = 0;
-		while (str[len] != '\0') {
-			++len;
+		core::sizeT length = 0;
+		while (str[length] != '\0') {
+			++length;
 		}
-		return Fnv1aHash(str, len);
+		return Fnv1aHash(str, length * sizeof(charA));
 	}
 
-	inline u32 Fnv1aHash(u32 hash, const charW* str, core::sizeT length)
+	inline u32 Fnv1aHash(const charW* str, core::sizeT length, u32 hash = fnv_offset)
 	{
-		for (core::sizeT i = 0; i < length; ++i)
-		{
-			const u32 value = static_cast<u32>(*str++);
-			hash ^= value;
-			hash *= 16777619u;
-		}
-
-		return hash;
-	}
-
-	inline u32 Fnv1aHash(const charW* str, core::sizeT length)
-	{
-		assert(str != nullptr);
-		return Fnv1aHash(2166136261u, str, length);
+		return Fnv1aHash((void*)str, length, hash);
 	}
 
 	inline u32 Fnv1aHash(const charW* str)
 	{
 		assert(str != nullptr);
-		core::sizeT len = 0;
-		while (str[len] != '\0') {
-			++len;
+		core::sizeT length = 0;
+		while (str[length] != '\0') {
+			++length;
 		}
-		return Fnv1aHash(str, len);
+		return Fnv1aHash(str, length * sizeof(charW));
 	}
 
 

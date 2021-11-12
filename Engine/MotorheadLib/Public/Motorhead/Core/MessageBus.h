@@ -4,6 +4,7 @@
 
 #include "PrimitiveTypes.h"
 #include "Containers.h"
+#include "SmartPointer.h"
 #include "Delegate.h"
 
 namespace motor::core {
@@ -145,7 +146,7 @@ namespace motor::core {
         [[nodiscard]] bool Validate(SubscriberHandle handle) const;
 
     private:
-        std::map<Message::id, std::unique_ptr<MessageContainerBase>> m_repository;
+        core::map<Message::id, core::UniquePtr<MessageContainerBase>> m_repository;
     };
 
     template<typename M>

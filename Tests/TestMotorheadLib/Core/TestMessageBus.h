@@ -41,6 +41,8 @@ public:
 			auto handle = bus.Subscribe<DummyMessage>(d);
 			auto handle2 = bus.Subscribe<DummyMessage>(sd);
 			bus.Publish(msg);
+			bus.Unsubscribe(handle);
+			bus.Unsubscribe(handle2);
 			PrintResult();
 		} while (getchar() != 'q');
 	}
