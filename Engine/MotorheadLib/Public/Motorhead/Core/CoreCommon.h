@@ -20,3 +20,4 @@
 #include "Hash.h"
 #include "Delegate.h"
 #include "MessageBus.h"
+#include "Logging.h"

@@ -15,4 +15,7 @@ namespace motor::core {
 
 	template<typename H, typename V>
 	using hash_map = std::unordered_map<H, V>;
+
+	template<typename T>
+	using List = std::list<T>;
 }

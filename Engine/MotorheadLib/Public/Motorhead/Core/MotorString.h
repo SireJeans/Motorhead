@@ -5,6 +5,8 @@
 #include "PrimitiveTypes.h"
 #include "Hash.h"
 
+#define INTERN_STR(str)		::motor::core::GenerateHash(##str)
+
 namespace motor::core {
 
 	using string = std::string;
@@ -107,22 +109,29 @@ namespace motor::core {
 		return HashHelper<T>::Generate(str);
 	}
 
-	class StringHash
+
+	class Name 
 	{
 	public:
-		template <typename T>
-		StringHash(const T& str)
-			: _hash(GenerateHash(str))
+		Name(const charA* str)
+			: m_hash(GenerateHash(str))
+			, m_str(str)
 		{
+			// nothing to do
 		}
 
-		inline u32 GetHash(void) const
+		u32	Hash() 
 		{
-			return _hash;
+			return m_hash;
+		}
+
+		const core::string Str()
+		{
+			return m_str;
 		}
 
 	private:
-		const u32 _hash;
+		const u32			m_hash;
+		const core::string	m_str;
 	};
-
 }
