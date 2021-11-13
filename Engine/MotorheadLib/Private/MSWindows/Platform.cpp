@@ -1,4 +1,4 @@
-#include "Motorhead/MSWindows/MSWinCommon.h"
+#include "MSWindows/MSWinCommon.h"
 
 //#include "Motorhead/Core/CoreCommon.h"
 //#include "Motorhead/Platform/PlatformCommon.h"

@@ -1,5 +1,8 @@
 #pragma once
 
+// Build defines
+#include "Build.h"
+
 // Global defines
 #include "CoreDefines.h"
 

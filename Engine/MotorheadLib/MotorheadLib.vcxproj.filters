@@ -22,14 +22,14 @@
     <Filter Include="Private\Engine">
       <UniqueIdentifier>{44be9d8c-26e5-4cdb-bc01-8ef04e4759de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Public\Motorhead\Platform">
-      <UniqueIdentifier>{bcdb15f5-58b7-4575-9634-92fb47c43114}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Public\Motorhead\MSWindows">
-      <UniqueIdentifier>{3e7e7e8f-5120-4ddf-babc-d20c98206671}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Private\MSWindows">
       <UniqueIdentifier>{1e0dee2e-f2df-49a6-b8b6-a574fa2ad13d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\Core\MSWindows">
+      <UniqueIdentifier>{3e7e7e8f-5120-4ddf-babc-d20c98206671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public\Motorhead\Core\Platform">
+      <UniqueIdentifier>{bcdb15f5-58b7-4575-9634-92fb47c43114}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -101,18 +101,6 @@
     <ClInclude Include="Public\Motorhead\Core\Hash.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Motorhead\Platform\Window.h">
-      <Filter>Public\Motorhead\Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\Motorhead\Platform\PlatformCommon.h">
-      <Filter>Public\Motorhead\Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\Motorhead\MSWindows\PlatformTypes.h">
-      <Filter>Public\Motorhead\MSWindows</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinCommon.h">
-      <Filter>Public\Motorhead\MSWindows</Filter>
-    </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\CoreMinimal.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
@@ -121,9 +109,6 @@
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\CoreDefines.h">
       <Filter>Public\Motorhead\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinIncludes.h">
-      <Filter>Public\Motorhead\MSWindows</Filter>
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\Delegate.h">
       <Filter>Public\Motorhead\Core</Filter>
@@ -143,8 +128,29 @@
     <ClInclude Include="Public\Motorhead\Core\MotorMemory.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinPlatform.h">
-      <Filter>Public\Motorhead\MSWindows</Filter>
+    <ClInclude Include="Public\Motorhead\Core\Build.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinCommon.h">
+      <Filter>Public\Motorhead\Core\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinIncludes.h">
+      <Filter>Public\Motorhead\Core\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h">
+      <Filter>Public\Motorhead\Core\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\PlatformTypes.h">
+      <Filter>Public\Motorhead\Core\MSWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformCommon.h">
+      <Filter>Public\Motorhead\Core\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformDefines.h">
+      <Filter>Public\Motorhead\Core\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Platform\Window.h">
+      <Filter>Public\Motorhead\Core\Platform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

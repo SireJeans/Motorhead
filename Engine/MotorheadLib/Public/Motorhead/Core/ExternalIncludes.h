@@ -2,7 +2,7 @@
 
 // MS Windows
 #ifdef PLATFORM_WIN64
-#include "Motorhead/MSWindows/MSWinIncludes.h"
+#include "Motorhead/Core/MSWindows/MSWinIncludes.h"
 #endif
 
 // zlib

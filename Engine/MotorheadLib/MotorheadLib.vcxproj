@@ -22,6 +22,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Motorhead\Common.h" />
+    <ClInclude Include="Public\Motorhead\Core\Build.h" />
     <ClInclude Include="Public\Motorhead\Core\Containers.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreDefines.h" />
@@ -35,6 +36,13 @@
     <ClInclude Include="Public\Motorhead\Core\MotorMath.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorMemory.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorString.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinCommon.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinIncludes.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\PlatformTypes.h" />
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformCommon.h" />
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformDefines.h" />
+    <ClInclude Include="Public\Motorhead\Core\Platform\Window.h" />
     <ClInclude Include="Public\Motorhead\Core\PrimitiveTypes.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorRandom.h" />
     <ClInclude Include="Public\Motorhead\Core\SmartPointer.h" />
@@ -44,12 +52,6 @@
     <ClInclude Include="Public\Motorhead\Engine\EngineCommon.h" />
     <ClInclude Include="Public\Motorhead\Engine\Entity.h" />
     <ClInclude Include="Public\Motorhead\Engine\TransformComponent.h" />
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinCommon.h" />
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinPlatform.h" />
-    <ClInclude Include="Public\Motorhead\MSWindows\MSWinIncludes.h" />
-    <ClInclude Include="Public\Motorhead\MSWindows\PlatformTypes.h" />
-    <ClInclude Include="Public\Motorhead\Platform\PlatformCommon.h" />
-    <ClInclude Include="Public\Motorhead\Platform\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -110,7 +112,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <AdditionalIncludeDirectories>$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;$(SolutionDir)ThirdParty\fmt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Public\Motorhead\Core;$(ProjectDir)Public\Motorhead\Engine;$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;$(SolutionDir)ThirdParty\fmt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>
@@ -139,7 +141,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <AdditionalIncludeDirectories>$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;$(SolutionDir)ThirdParty\fmt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Public\Motorhead\Core;$(ProjectDir)Public\Motorhead\Engine;$(ProjectDir)Public;$(SolutionDir)ThirdParty\zlib\zlib_1_2_11_msvc2017_64\msvc2017_64\include;$(SolutionDir)ThirdParty\fmt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <Link>

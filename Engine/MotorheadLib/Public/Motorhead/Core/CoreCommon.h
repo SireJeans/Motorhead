@@ -1,13 +1,7 @@
 #pragma once
 
-// Global defines
-#include "CoreDefines.h"
-
-// C/C++ standard headers
-#include "StdIncludes.h"
-
-// External/3rd Party headers
-#include "ExternalIncludes.h"
+// Must have header
+#include "CoreMinimal.h"
 
 // Core headers
 #include "PrimitiveTypes.h"

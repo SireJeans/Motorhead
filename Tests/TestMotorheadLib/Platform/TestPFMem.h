@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Motorhead/Core/CoreCommon.h"
-#include "Motorhead/MSWindows/MSWinCommon.h"
+#include "Motorhead/Core/MSWindows/MSWinCommon.h"
 #include "../Test.h"
 
 using namespace motor;
