@@ -1,11 +1,12 @@
 #define TEST_ENTITY 0
 #define TEST_COMPONENT 0
 #define TEST_RANDOM 0
-#define TEST_HASH 1
+#define TEST_HASH 0
 #define TEST_STRING 0
 #define TEST_WINDOW 0
 #define TEST_DELEGATE 0
 #define TEST_MESSAGEBUS 0
+#define TEST_LOGGING 1
 
 #if TEST_ENTITY == 1
 #include "Engine/TestEntity.h"
@@ -23,6 +24,8 @@
 #include "Core/TestDelegate.h"
 #elif TEST_MESSAGEBUS == 1
 #include "Core/TestMessageBus.h"
+#elif TEST_LOGGING == 1
+#include "Core/TestLogging.h"
 #else
 #error One of the test must be enabled
 #endif

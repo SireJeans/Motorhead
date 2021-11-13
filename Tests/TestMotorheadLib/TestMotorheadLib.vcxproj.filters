@@ -34,7 +34,12 @@
     <ClInclude Include="Core\TestDelegate.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\TestMessageBus.h" />
+    <ClInclude Include="Core\TestMessageBus.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\TestLogging.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

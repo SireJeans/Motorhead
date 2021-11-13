@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Core\TestHash.h" />
+    <ClInclude Include="Core\TestLogging.h" />
     <ClInclude Include="Core\TestRandom.h" />
     <ClInclude Include="Engine\TestComponent.h" />
     <ClInclude Include="Engine\TestEntity.h" />

@@ -120,12 +120,12 @@ namespace motor::core {
 			// nothing to do
 		}
 
-		u32	Hash() 
+		const u32 Hash() const
 		{
 			return m_hash;
 		}
 
-		const core::string Str()
+		const core::string Str() const
 		{
 			return m_str;
 		}
