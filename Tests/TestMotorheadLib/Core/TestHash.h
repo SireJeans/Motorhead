@@ -16,7 +16,7 @@ public:
 		const charT* data = TXT("1234567890");
 
 		do {
-			_result = hash::GetCrc(_result, (u8*)data, 10);
+			_result = hash::Crc32Hash((u8*)data, 10, _result);
 			PrintResult();
 		} while (getchar() != 'q');
 	}

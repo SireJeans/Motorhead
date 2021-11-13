@@ -1,8 +1,7 @@
 #pragma once
 
-#include "StdIncludes.h"
+#include "CoreMinimal.h"
 
-#include "PrimitiveTypes.h"
 #include "Containers.h"
 #include "SmartPointer.h"
 #include "Delegate.h"

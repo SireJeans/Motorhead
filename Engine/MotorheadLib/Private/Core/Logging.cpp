@@ -3,7 +3,7 @@
 namespace motor::log {
 
 	LoggerBase::LoggerBase()
-		: m_name("UNNAMED_LOGGER")
+		: m_name(TXT("UNNAMED_LOGGER"))
 		, m_default_level(Level::Debug)
 		, m_compile_time_level(log::Level(MHLOG_COMPILE_TIME_LEVEL))
 		, m_current_level((u8)m_default_level)
@@ -11,11 +11,11 @@ namespace motor::log {
 		LoggerBase::s_loggers.push_back(this);
 	}
 
-	LoggerBase::LoggerBase(const charA* name, log::Level default_level)
+	LoggerBase::LoggerBase(const charT* name, log::Level default_level)
 		: m_name(name)
 		, m_default_level(default_level)
 		, m_compile_time_level(log::Level(MHLOG_COMPILE_TIME_LEVEL))
-		, m_current_level((u8)m_default_level)
+		, m_current_level((u8)default_level)
 	{
 		LoggerBase::s_loggers.push_back(this);
 	}

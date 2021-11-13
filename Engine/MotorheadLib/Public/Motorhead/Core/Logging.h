@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "Containers.h"
 #include "MotorString.h"
 #include "fmt/format.h"
@@ -75,7 +76,7 @@ namespace motor::log {
 		extern class LoggerBase##log_name : public ::motor::log::LoggerBase							\
 		{																							\
 		public:																						\
-			LoggerBase##log_name() : LoggerBase(#log_name, ::motor::log::Level::level) { }			\
+			LoggerBase##log_name() : LoggerBase(TXT(#log_name), ::motor::log::Level::level) { }			\
 		} log_name;
 
 
@@ -85,7 +86,7 @@ namespace motor::log {
 		static class LoggerBase##log_name : public ::motor::log::LoggerBase							\
 		{																							\
 		public:																						\
-			LoggerBase##log_name() : LoggerBase(#log_name, ::motor::log::Level::level) { }			\
+			LoggerBase##log_name() : LoggerBase(TXT(#log_name), ::motor::log::Level::level) { }			\
 		} log_name;
 
 

@@ -1,7 +1,6 @@
 #pragma once
 
-#include <zlib/zlib.h>
-#include "PrimitiveTypes.h"
+#include "CoreMinimal.h"
 
 namespace motor::hash {
 

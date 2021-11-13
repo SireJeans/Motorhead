@@ -1,8 +1,7 @@
 #pragma once
 
-#include <string>
+#include "CoreMinimal.h"
 
-#include "PrimitiveTypes.h"
 #include "Hash.h"
 
 #define INTERN_STR(str)		::motor::core::GenerateHash(##str)
@@ -110,12 +109,19 @@ namespace motor::core {
 	}
 
 
-	class Name 
+	class Name
 	{
 	public:
-		Name(const charA* str)
+		Name(const charT* str)
 			: m_hash(GenerateHash(str))
 			, m_str(str)
+		{
+			// nothing to do
+		}
+
+		Name(const Name& rhs)
+			: m_hash(rhs.Hash())
+			, m_str(rhs.Str())
 		{
 			// nothing to do
 		}
@@ -125,13 +131,24 @@ namespace motor::core {
 			return m_hash;
 		}
 
+#ifdef USE_UTF16
+		const core::wstring Str() const
+		{
+			return m_str;
+		}
+#else
 		const core::string Str() const
 		{
 			return m_str;
 		}
+#endif
 
 	private:
 		const u32			m_hash;
+#ifdef USE_UTF16
+		const core::wstring	m_str;
+#else
 		const core::string	m_str;
+#endif
 	};
 }

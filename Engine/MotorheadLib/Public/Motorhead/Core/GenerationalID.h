@@ -1,8 +1,6 @@
 #pragma once
 
-#include "StdIncludes.h"
-
-#include "PrimitiveTypes.h"
+#include "CoreMinimal.h"
 
 #ifndef GENID_TYPE
 #define GENID_TYPE	u64

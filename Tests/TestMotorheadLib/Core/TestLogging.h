@@ -38,6 +38,23 @@ public:
 			MH_GDEBUG("popo\n");
 			MH_GTRACE("popo\n");
 
+			MH_LOG(testlogging, Warn, TXT("Pouet\n"));
+			MH_LOG(testlogging, Warn, TXT("Pouet {0}\n"), "Caca");
+			MH_LOG(testlogging2, Debug, TXT("CHIOTTE\n"));
+			MH_FATAL(testlogging2, TXT("popo {0}\n"), "zobi");
+			MH_ERROR(testlogging2, TXT("popo {0}, {1}\n"), "zobi0", "zobi1");
+			MH_WARN(testlogging2, TXT("popo\n"));
+			MH_INFO(testlogging2, TXT("popo\n"));
+			MH_DEBUG(testlogging2, TXT("popo\n"));
+			MH_TRACE(testlogging2, TXT("popo\n"));
+			MH_GFATAL(TXT("popo {0}\n"), "zobi");
+			MH_GERROR(TXT("popo {0}, {1}\n"), "zobi0", "zobi1");
+			MH_GWARN(TXT("popo\n"));
+			MH_GINFO(TXT("popo\n"));
+			MH_GDEBUG(TXT("popo\n"));
+			MH_GTRACE(TXT("popo\n"));
+
+
 			PrintResult();
 		} while (getchar() != 'q');
 	}
