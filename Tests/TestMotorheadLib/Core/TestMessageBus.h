@@ -31,8 +31,9 @@ public:
 
 		do {
 			std::cout << core::Message::Id<DummyMessage>() << "\n";
+			std::cout << core::Message::Id<DummyMessage>() << "\n";
 			auto container = core::MessageContainer<DummyMessage>{};
-			auto bus = core::MessageBus{};
+			auto bus = core::MessageBus();
 			core::Delegate<void(DummyMessage)> d;
 			d.Bind<&Func1>();
 			Structure pouet;
