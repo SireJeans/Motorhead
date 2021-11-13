@@ -5,8 +5,9 @@
 #define TEST_STRING 0
 #define TEST_WINDOW 0
 #define TEST_DELEGATE 0
-#define TEST_MESSAGEBUS 1
+#define TEST_MESSAGEBUS 0
 #define TEST_LOGGING 0
+#define TEST_PFMEM 1
 
 #if TEST_ENTITY == 1
 #include "Engine/TestEntity.h"
@@ -26,6 +27,8 @@
 #include "Core/TestMessageBus.h"
 #elif TEST_LOGGING == 1
 #include "Core/TestLogging.h"
+#elif TEST_PFMEM == 1
+#include "Platform/TestPFMem.h"
 #else
 #error One of the test must be enabled
 #endif

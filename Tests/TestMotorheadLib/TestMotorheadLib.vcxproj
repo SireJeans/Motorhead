@@ -169,6 +169,7 @@
     <ClInclude Include="Engine\TestComponent.h" />
     <ClInclude Include="Engine\TestEntity.h" />
     <ClInclude Include="Core\TestString.h" />
+    <ClInclude Include="Platform\TestPFMem.h" />
     <ClInclude Include="Platform\TestWindow.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Core\TestDelegate.h" />

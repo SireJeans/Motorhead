@@ -40,6 +40,9 @@
     <ClInclude Include="Core\TestLogging.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Platform\TestPFMem.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

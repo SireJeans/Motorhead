@@ -5,3 +5,4 @@
 #include "Motorhead/Core/CoreMinimal.h"
 
 #include "PlatformTypes.h"
+#include "MSWinPlatform.h"

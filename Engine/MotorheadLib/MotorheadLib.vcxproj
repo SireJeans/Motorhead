@@ -13,9 +13,11 @@
   <ItemGroup>
     <ClCompile Include="Private\Core\Hash.cpp" />
     <ClCompile Include="Private\Core\Logging.cpp" />
+    <ClCompile Include="Private\Core\MotorMemory.cpp" />
     <ClCompile Include="Private\Core\MotorRandom.cpp" />
     <ClCompile Include="Private\Core\MotorString.cpp" />
     <ClCompile Include="Private\Engine\Entity.cpp" />
+    <ClCompile Include="Private\MSWindows\MSWinMem.cpp" />
     <ClCompile Include="Private\MSWindows\Platform.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +33,7 @@
     <ClInclude Include="Public\Motorhead\Core\Logging.h" />
     <ClInclude Include="Public\Motorhead\Core\MessageBus.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorMath.h" />
+    <ClInclude Include="Public\Motorhead\Core\MotorMemory.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorString.h" />
     <ClInclude Include="Public\Motorhead\Core\PrimitiveTypes.h" />
     <ClInclude Include="Public\Motorhead\Core\MotorRandom.h" />
@@ -42,6 +45,7 @@
     <ClInclude Include="Public\Motorhead\Engine\Entity.h" />
     <ClInclude Include="Public\Motorhead\Engine\TransformComponent.h" />
     <ClInclude Include="Public\Motorhead\MSWindows\MSWinCommon.h" />
+    <ClInclude Include="Public\Motorhead\MSWindows\MSWinPlatform.h" />
     <ClInclude Include="Public\Motorhead\MSWindows\MSWinIncludes.h" />
     <ClInclude Include="Public\Motorhead\MSWindows\PlatformTypes.h" />
     <ClInclude Include="Public\Motorhead\Platform\PlatformCommon.h" />

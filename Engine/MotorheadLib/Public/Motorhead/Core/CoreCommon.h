@@ -12,6 +12,7 @@
 // Core headers
 #include "PrimitiveTypes.h"
 #include "MotorMath.h"
+#include "MotorMemory.h"
 #include "Containers.h"
 #include "GenerationalID.h"
 #include "SmartPointer.h"

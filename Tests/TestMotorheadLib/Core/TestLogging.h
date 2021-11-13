@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Motorhead/Core/Logging.h"
+#include "Motorhead/Core/CoreCommon.h"
 #include "../Test.h"
 
 

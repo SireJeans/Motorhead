@@ -4,8 +4,10 @@
 
 #include "Containers.h"
 #include "MotorString.h"
-#include "fmt/format.h"
 #include "Template.h"
+
+//#include "fmt/format.h"
+//#include "fmt/xchar.h"
 
 #define MHLOG_LEVEL_NOLOG		0
 #define MHLOG_LEVEL_FATAL		1
@@ -52,12 +54,18 @@ namespace motor::log {
 		}
 
 		template<typename ...Args>
-		void Log(log::Level level, const charA* format, Args... args)
+		void Log(log::Level level, const charT* format, Args... args)
 		{
-			if (m_current_level > (u8)level)
+			if (m_current_level < (u8)level)
 				return;
+#ifdef USE_UTF16
+			std::wstring s = fmt::format(format, args...);
+			std::wcout << s;
+#else
 			std::string s = fmt::format(format, args...);
 			std::cout << s;
+#endif
+
 		}
 
 		static LoggerBase* Get(const core::Name name);
@@ -92,9 +100,9 @@ namespace motor::log {
 
 #define MH_LOG(log_name, level, format, ...)										\
 		{																			\
-			static_assert(IsArrayOrRefOfType<decltype(format), charT>::value, "Formatting string must be a charT array."); \
+			static_assert(IsArrayOrRefOfType<decltype(TXT(format)), charT>::value, "Formatting string must be a charT array."); \
 			static_assert((u8)::motor::log::Level::NumLevel > (u8)::motor::log::Level::level && (u8)::motor::log::Level::level > 0, "Log level must be in range.");	\
-			log_name.Log(::motor::log::Level::level, format, __VA_ARGS__);			\
+			log_name.Log(::motor::log::Level::level, TXT(format), __VA_ARGS__);			\
 		}
 
 #define MH_FATAL(log_name, format, ...)		MH_LOG(log_name, Fatal, format, __VA_ARGS__)

@@ -10,3 +10,4 @@
 
 // fmtlib
 #include <fmt/format.h>
+#include <fmt/xchar.h>

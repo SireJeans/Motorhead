@@ -42,11 +42,11 @@ constexpr u16 u16_invalid_val{ 0xffffui16 };
 constexpr u8 u8_invalid_val{ 0xffui8 };
 
 // Platform integers
-using uint = unsigned int;
+using unint = unsigned int;
 using sint = signed int;
 
 // Check platform integer size
-static_assert(sizeof(uint) >= 4 && sizeof(sint) >= 4, "Expected integer to be at least 32 bits");
+static_assert(sizeof(unint) >= 4 && sizeof(sint) >= 4, "Expected integer to be at least 32 bits");
 
 // Size & type
 namespace motor::core {

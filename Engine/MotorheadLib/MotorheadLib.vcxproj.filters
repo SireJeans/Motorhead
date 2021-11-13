@@ -51,6 +51,12 @@
     <ClCompile Include="Private\Core\Logging.cpp">
       <Filter>Private\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Private\Core\MotorMemory.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\MSWindows\MSWinMem.cpp">
+      <Filter>Private\MSWindows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Motorhead\Common.h">
@@ -133,6 +139,12 @@
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\Template.h">
       <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MotorMemory.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\MSWindows\MSWinPlatform.h">
+      <Filter>Public\Motorhead\MSWindows</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
