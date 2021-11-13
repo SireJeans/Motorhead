@@ -33,18 +33,16 @@ namespace motor::core {
 // ANSI & Wide characters
 using charA = char;
 using charW = wchar_t;
-#ifdef _WIN64
-#ifdef UNICODE
+#ifdef USE_UTF16
 using charT = charW;
 #else
 using charT = charA;
 #endif
-#endif
 
-#ifdef UNICODE
+#ifdef USE_UTF16
 #define TXT(string)	L##string
 #else
-#define TXT(string)	##string
+#define TXT(string)	string
 #endif
 
 // Static asserts for primitive types

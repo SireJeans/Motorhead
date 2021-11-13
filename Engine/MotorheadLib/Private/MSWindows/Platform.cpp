@@ -49,7 +49,7 @@ namespace motor::platform {
 		}
 
 		WindowInfo& GetInfoFromHandle(WindowHandle handle) {
-			const window_id id{ (id::id_type)GetWindowLongPtr(handle, GWLP_USERDATA) };
+			const window_id id{ (id::genid_type)GetWindowLongPtr(handle, GWLP_USERDATA) };
 			return GetInfoFromId(id);
 		}
 
@@ -181,7 +181,7 @@ namespace motor::platform {
 
 		AdjustWindowRect(&rc, info.style, FALSE);
 
-		const charT* caption{ (init_info && init_info->caption) ? init_info->caption : L"Motorhead Game" };
+		const charW* caption{ (init_info && init_info->caption) ? init_info->caption : L"Motorhead Game" };
 		const s32 left{ init_info ? init_info->left : info.client_area.left };
 		const s32 top{ init_info ? init_info->top : info.client_area.top };
 		const s32 width{ init_info ? init_info->width : rc.left - rc.right };

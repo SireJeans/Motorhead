@@ -57,7 +57,7 @@ namespace motor::ecs {
 
 		INFO GetInfo(ID id) { 
 			assert(id::IsValid(id));
-			const id::id_type index{ id::Index(id) };
+			const id::genid_type index{ id::Index(id) };
 			assert(index != id::internal::index_mask);
 			assert(index < _ids.size());
 			assert(index < _data.size());
@@ -66,7 +66,7 @@ namespace motor::ecs {
 
 		void Remove(ID id) { 
 			assert(id::IsValid(id));
-			const id::id_type index{ id::Index(id) };
+			const id::genid_type index{ id::Index(id) };
 			assert(index != id::internal::index_mask);
 			assert(index < _ids.size());
 			assert(index < _data.size());
@@ -75,7 +75,7 @@ namespace motor::ecs {
 
 		void Create(ID id) {
 			assert(id::IsValid(id));
-			const id::id_type index{ id::Index(id) };
+			const id::genid_type index{ id::Index(id) };
 			assert(index != id::internal::index_mask);
 			assert(!_ids[index].IsValid());
 			

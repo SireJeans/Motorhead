@@ -36,4 +36,28 @@ namespace motor::log {
 	}
 
 	core::vector<LoggerBase*> LoggerBase::s_loggers{ };
+
+	const charT* ToString(Level level)
+	{
+		switch (level)
+		{
+		case Level::NoLog:
+			return TXT("NoLog");
+		case Level::Fatal:
+			return TXT("Fatal");
+		case Level::Error:
+			return TXT("Error");
+		case Level::Warn:
+			return TXT("Warning");
+		case Level::Info:
+			return TXT("Info");
+		case Level::Debug:
+			return TXT("Debug");
+		case Level::Trace:
+			return TXT("Trace");
+		}
+		return TXT("UnknownLevel");
+	}
 }
+
+MHLOG_DEFINE(Global)

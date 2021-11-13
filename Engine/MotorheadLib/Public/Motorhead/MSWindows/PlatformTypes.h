@@ -11,7 +11,7 @@ namespace motor::platform {
 	struct WindowInitInfo {
 		WindowProc		callback{ nullptr };
 		WindowHandle	parent{ nullptr };
-		const charT*	caption{ nullptr };
+		const charW*	caption{ nullptr };
 		s32				left{ 0 };
 		s32				top{ 0 };
 		s32				width{ 1920 };

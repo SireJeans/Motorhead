@@ -8,3 +8,5 @@
 // zlib
 #include <zlib/zlib.h>
 
+// fmtlib
+#include <fmt/format.h>

@@ -131,5 +131,8 @@
     <ClInclude Include="Public\Motorhead\Core\Logging.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\Template.h">
+      <Filter>Public\Motorhead\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

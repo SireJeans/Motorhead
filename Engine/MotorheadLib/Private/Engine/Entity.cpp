@@ -6,7 +6,7 @@ namespace motor::ecs {
 
 	namespace {
 
-		core::vector<id::id_type>			generations;
+		core::vector<id::genid_type>			generations;
 		core::deque<entity_id>				free_ids;
 
 	}
@@ -21,7 +21,7 @@ namespace motor::ecs {
 			id = entity_id{ id::NewGeneration(id) };
 			++generations[id::Index(id)];
 		} else {
-			id = entity_id{ (id::id_type)generations.size() };
+			id = entity_id{ (id::genid_type)generations.size() };
 			generations.push_back(0);
 		}
 
@@ -34,7 +34,7 @@ namespace motor::ecs {
 	{
 		assert(e.IsValid());
 		const entity_id id{ e.GetId() };
-		const id::id_type index{ id::Index(id) };
+		const id::genid_type index{ id::Index(id) };
 		assert(index < generations.size());
 		return (generations[index] == id::Generation(id));
 	}
@@ -42,7 +42,7 @@ namespace motor::ecs {
 	void RemoveGameEntity(Entity e)
 	{
 		const entity_id id{ e.GetId() };
-		const id::id_type index{ id::Index(id) };
+		const id::genid_type index{ id::Index(id) };
 		//assert(IsAlive(e));
 		assert(index < generations.size());
 		if (IsAlive(e)) {
