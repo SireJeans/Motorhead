@@ -59,10 +59,10 @@ namespace motor::log {
 			if (m_current_level < (u8)level)
 				return;
 #ifdef USE_UTF16
-			std::wstring s = fmt::format(format, args...);
+			core::wstring s = fmt::format(format, args...);
 			std::wcout << s;
 #else
-			std::string s = fmt::format(format, args...);
+			core::string s = fmt::format(format, args...);
 			std::cout << s;
 #endif
 

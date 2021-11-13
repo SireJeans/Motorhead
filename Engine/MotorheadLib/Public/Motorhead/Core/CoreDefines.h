@@ -12,4 +12,4 @@
 #define MHLOG_COMPILE_TIME_LEVEL		MHLOG_LEVEL_TRACE
 #endif
 
-#define USE_UTF16 1
+//#define USE_UTF16 1
