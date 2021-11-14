@@ -37,6 +37,7 @@ namespace motor::id {
 	using index_type = std::conditional_t<internal::index_bits <= 32, std::conditional_t<internal::index_bits <= 16, std::conditional_t<internal::index_bits <= 8, u8, u16>, u32>, u64>;
 	static_assert(sizeof(generation_type) * 8 >= internal::generation_bits);
 	static_assert(sizeof(index_type) * 8 >= internal::index_bits);
+	static_assert(internal::index_bits + internal::generation_bits <= (sizeof(genid_type) * 8));
 	static_assert(sizeof(genid_type) - sizeof(generation_type) > 0);
 
 	constexpr inline bool IsValid(genid_type id) 
@@ -44,9 +45,9 @@ namespace motor::id {
 		return id != invalid_id;
 	}
 
-	constexpr inline genid_type Index(genid_type id)
+	constexpr inline index_type Index(genid_type id)
 	{
-		genid_type index{ id & internal::index_mask };
+		index_type index{ id & internal::index_mask };
 		assert(index != internal::index_mask);
 		return index;
 	}
@@ -60,7 +61,7 @@ namespace motor::id {
 	{
 		const generation_type generation{ id::Generation(id) + 1 };
 		assert(generation < internal::generation_mask);
-		return Index(id & internal::index_mask) | (((u64)generation) << internal::index_bits);
+		return Index(id) | (((genid_type)generation) << internal::index_bits);
 	}
 
 #define DEFINE_ID_TYPE(name)	using name = ::motor::id::genid_type
