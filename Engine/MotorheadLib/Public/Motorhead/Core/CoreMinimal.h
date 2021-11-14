@@ -3,6 +3,9 @@
 // Build defines
 #include "Build.h"
 
+// Platform defines
+#include "Platform/PlatformDefines.h"
+
 // Global defines
 #include "CoreDefines.h"
 

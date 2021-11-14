@@ -22,22 +22,19 @@
     <Filter Include="Private\Engine">
       <UniqueIdentifier>{44be9d8c-26e5-4cdb-bc01-8ef04e4759de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Private\MSWindows">
-      <UniqueIdentifier>{1e0dee2e-f2df-49a6-b8b6-a574fa2ad13d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Public\Motorhead\Core\MSWindows">
       <UniqueIdentifier>{3e7e7e8f-5120-4ddf-babc-d20c98206671}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public\Motorhead\Core\Platform">
       <UniqueIdentifier>{bcdb15f5-58b7-4575-9634-92fb47c43114}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Private\Core\MSWindows">
+      <UniqueIdentifier>{1e0dee2e-f2df-49a6-b8b6-a574fa2ad13d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Private\Engine\Entity.cpp">
       <Filter>Private\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="Private\MSWindows\Platform.cpp">
-      <Filter>Private\MSWindows</Filter>
     </ClCompile>
     <ClCompile Include="Private\Core\MotorString.cpp">
       <Filter>Private\Core</Filter>
@@ -54,8 +51,11 @@
     <ClCompile Include="Private\Core\MotorMemory.cpp">
       <Filter>Private\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Private\MSWindows\MSWinMem.cpp">
-      <Filter>Private\MSWindows</Filter>
+    <ClCompile Include="Private\Core\MSWindows\MSWinMem.cpp">
+      <Filter>Private\Core\MSWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="Private\Core\MSWindows\MSWinWindow.cpp">
+      <Filter>Private\Core\MSWindows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +140,7 @@
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h">
       <Filter>Public\Motorhead\Core\MSWindows</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Motorhead\Core\MSWindows\PlatformTypes.h">
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinWindow.h">
       <Filter>Public\Motorhead\Core\MSWindows</Filter>
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\Platform\PlatformCommon.h">

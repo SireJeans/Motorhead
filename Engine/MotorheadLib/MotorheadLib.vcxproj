@@ -16,9 +16,9 @@
     <ClCompile Include="Private\Core\MotorMemory.cpp" />
     <ClCompile Include="Private\Core\MotorRandom.cpp" />
     <ClCompile Include="Private\Core\MotorString.cpp" />
+    <ClCompile Include="Private\Core\MSWindows\MSWinMem.cpp" />
+    <ClCompile Include="Private\Core\MSWindows\MSWinWindow.cpp" />
     <ClCompile Include="Private\Engine\Entity.cpp" />
-    <ClCompile Include="Private\MSWindows\MSWinMem.cpp" />
-    <ClCompile Include="Private\MSWindows\Platform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Motorhead\Common.h" />
@@ -39,7 +39,7 @@
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinIncludes.h" />
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h" />
-    <ClInclude Include="Public\Motorhead\Core\MSWindows\PlatformTypes.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinWindow.h" />
     <ClInclude Include="Public\Motorhead\Core\Platform\PlatformCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\Platform\PlatformDefines.h" />
     <ClInclude Include="Public\Motorhead\Core\Platform\Window.h" />

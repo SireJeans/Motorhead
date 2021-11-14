@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Motorhead/Core/CoreCommon.h"
-#include "../Platform/PlatformCommon.h"
+#include "Platform/PlatformCommon.h"
 
 namespace motor::platform {
 

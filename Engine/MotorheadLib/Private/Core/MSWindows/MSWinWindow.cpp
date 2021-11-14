@@ -1,8 +1,5 @@
 #include "MSWindows/MSWinCommon.h"
 
-//#include "Motorhead/Core/CoreCommon.h"
-//#include "Motorhead/Platform/PlatformCommon.h"
-
 namespace motor::platform {
 
 	namespace {

@@ -57,13 +57,13 @@ namespace motor::core {
 // ANSI & Wide characters
 using charA = char;
 using charW = wchar_t;
-#ifdef USE_UTF16
+#if USE_UTF16OR32
 using charT = charW;
 #else
 using charT = charA;
 #endif
 
-#ifdef USE_UTF16
+#if USE_UTF16OR32
 #define TXT(string)	L##string
 #else
 #define TXT(string)	string

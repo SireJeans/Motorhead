@@ -16,3 +16,6 @@
 #include "Delegate.h"
 #include "MessageBus.h"
 #include "Logging.h"
+
+// Platform headers
+#include "Platform/PlatformCommon.h"

@@ -58,7 +58,7 @@ namespace motor::log {
 		{
 			if (m_current_level < (u8)level)
 				return;
-#ifdef USE_UTF16
+#if USE_UTF16OR32
 			core::wstring s = fmt::format(format, args...);
 			std::wcout << s;
 #else

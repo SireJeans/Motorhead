@@ -131,7 +131,7 @@ namespace motor::core {
 			return m_hash;
 		}
 
-#ifdef USE_UTF16
+#if USE_UTF16OR32
 		const core::wstring Str() const
 		{
 			return m_str;
@@ -145,7 +145,7 @@ namespace motor::core {
 
 	private:
 		const u32			m_hash;
-#ifdef USE_UTF16
+#if USE_UTF16OR32
 		const core::wstring	m_str;
 #else
 		const core::string	m_str;
