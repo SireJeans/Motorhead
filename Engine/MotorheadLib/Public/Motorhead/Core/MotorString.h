@@ -142,23 +142,32 @@ namespace motor::core {
 	{
 	public:
 		Name(const charT* str)
-			: m_hash(GenerateHash(str))
+			//: m_hash32(GenerateHash(str))
+			: m_hash32(PTRHASH32(str))
+			, m_hash64(PTRHASH64(str))
 			, m_str(str)
 		{
 			// nothing to do
 		}
 
 		Name(const Name& rhs)
-			: m_hash(rhs.Hash())
-			, m_str(rhs.Str())
+			: m_hash32(rhs.m_hash32)
+			, m_hash64(rhs.m_hash64)
+			, m_str(rhs.m_str)
 		{
 			// nothing to do
 		}
 
 		const u32 Hash() const
 		{
-			return m_hash;
+			return m_hash32;
 		}
+
+		const u64 Hash64() const
+		{
+			return m_hash64;
+		}
+
 
 #if USE_UTF16OR32
 		const core::WString Str() const
@@ -173,7 +182,8 @@ namespace motor::core {
 #endif
 
 	private:
-		const u32			m_hash;
+		const u32			m_hash32;
+		const u64			m_hash64;
 #if USE_UTF16OR32
 		const core::WString	m_str;
 #else

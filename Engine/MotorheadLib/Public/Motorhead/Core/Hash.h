@@ -277,8 +277,8 @@ using ::motor::hash::operator""_fnv1a64;
 #define STRHASH64(str)	str ## _fnv1a64
 #define WSTRHASH32(str) L ## str ## _fnv1a32
 #define WSTRHASH64(str)	L ## str ## _fnv1a64
-#define PTRHASH32(str)	::motor::hash::Fnv1a32::Hash(ptr)
-#define PTRHASH64(str)	::motor::hash::Fnv1a64::Hash(ptr)
+#define PTRHASH32(ptr)	::motor::hash::Fnv1a32::Hash(ptr)
+#define PTRHASH64(ptr)	::motor::hash::Fnv1a64::Hash(ptr)
 
 #if USE_UTF16OR32
 #define TXTHASH32(str)	WSTRHASH32(str)

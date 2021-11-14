@@ -45,21 +45,28 @@ public:
 
 			const char* ptr = "pouet";
 
-			u32 choice = hash::Fnv1a32::Hash(ptr);
+			u32 choice = PTRHASH32(ptr);
 
 			switch (choice)
 			{
 			case STRHASH32("pouet"):
-				std::wcout << "pouet a gagné\n";
+				std::cout << "pouet a gagné\n";
 				break;
 			case STRHASH32("castou"):
-				std::wcout << "castou a gagné\n";
+				std::cout << "castou a gagné\n";
 				break;
 			default:
-				std::wcout << "personne n'a gagné\n";
+				std::cout << "personne n'a gagné\n";
 				break;
 			}
 
+			core::Name name1("Castou");
+			core::Name name2("SJ");
+			core::Name name4("");
+			std::cout << "\n";
+			std::cout << name1.Str() << " " << name1.Hash() << " " << name1.Hash64() << "\n";
+			std::cout << name2.Str() << " " << name2.Hash() << " " << name2.Hash64() << "\n";
+			std::cout << name4.Str() << " " << name4.Hash() << " " << name4.Hash64() << "\n";
 			PrintResult();
 		} while (getchar() != 'q');
 	}
@@ -71,7 +78,7 @@ public:
 private:
 
 	void PrintResult() {
-		std::cout << "Intern strings:\n";
+		std::cout << "\nIntern strings:\n";
 		std::cout << "cstr: " << cstr_id << " " << cstr_result << "\n";
 		std::wcout << "wstr: " << wstr_id << " " << wstr_result << "\n";
 		std::cout << "std_string: " << std_string_id << " " << std_string_result << "\n";
