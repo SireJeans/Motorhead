@@ -11,6 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Private\Core\CorePCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Private\Core\Hash.cpp" />
     <ClCompile Include="Private\Core\Logging.cpp" />
     <ClCompile Include="Private\Core\MotorMemory.cpp" />
@@ -27,6 +31,7 @@
     <ClInclude Include="Public\Motorhead\Core\CoreCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreDefines.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreMinimal.h" />
+    <ClInclude Include="Public\Motorhead\Core\CorePCH.h" />
     <ClInclude Include="Public\Motorhead\Core\Delegate.h" />
     <ClInclude Include="Public\Motorhead\Core\ExternalIncludes.h" />
     <ClInclude Include="Public\Motorhead\Core\GenerationalID.h" />
@@ -106,9 +111,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Motorhead/Core/CorePCH.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>
@@ -135,9 +139,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Motorhead/Core/CorePCH.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExceptionHandling>false</ExceptionHandling>
       <FloatingPointModel>Fast</FloatingPointModel>

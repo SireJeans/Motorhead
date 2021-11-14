@@ -57,6 +57,9 @@
     <ClCompile Include="Private\Core\MSWindows\MSWinWindow.cpp">
       <Filter>Private\Core\MSWindows</Filter>
     </ClCompile>
+    <ClCompile Include="Private\Core\CorePCH.cpp">
+      <Filter>Private\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Motorhead\Common.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\Platform\Window.h">
       <Filter>Public\Motorhead\Core\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\CorePCH.h">
+      <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

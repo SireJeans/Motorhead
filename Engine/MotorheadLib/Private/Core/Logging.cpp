@@ -1,3 +1,4 @@
+#include "Motorhead/Core/CorePCH.h"
 #include "Motorhead/Core/Logging.h"
 
 namespace motor::log {
