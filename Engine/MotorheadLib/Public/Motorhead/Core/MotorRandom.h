@@ -12,6 +12,6 @@ namespace motor::random {
 
 	u16 FindNextPrime(u16);
 
-	core::vector<u32> PRSetTraversal(u32);
+	core::Vector<u32> PRSetTraversal(u32);
 
 }

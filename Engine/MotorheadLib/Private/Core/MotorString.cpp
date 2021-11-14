@@ -5,8 +5,8 @@ namespace motor::core {
 
 	namespace {
 
-		core::hash_map<StringID, core::String> string_table;
-		core::hash_map<StringID, core::WString> wstring_table;
+		core::HashMap<StringID, core::String> string_table;
+		core::HashMap<StringID, core::WString> wstring_table;
 	}
 
 	u32 StrLen(const charA* str) {

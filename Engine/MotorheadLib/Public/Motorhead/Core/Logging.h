@@ -75,7 +75,7 @@ namespace motor::log {
 		u8									m_current_level;
 		const log::Level					m_default_level;
 		const log::Level					m_compile_time_level;
-		static core::vector<LoggerBase*>	s_loggers;
+		static core::Vector<LoggerBase*>	s_loggers;
 	};
 
 }

@@ -18,7 +18,7 @@ namespace motor::random {
 		return MOTORRAND_PRIMES_INVALID;
 	}
 
-	core::vector<u32> PRSetTraversal(u16 set_size) {
+	core::Vector<u32> PRSetTraversal(u16 set_size) {
 		u32 skip = 0;
 		u32 prime = (u32)FindNextPrime(set_size);
 		assert(prime != MOTORRAND_PRIMES_INVALID);
@@ -32,7 +32,7 @@ namespace motor::random {
 			skip = ra * set_size * set_size + rb * set_size + rc;
 		}
 
-		core::vector<u32> result;
+		core::Vector<u32> result;
 
 		for (u32 i{ 0 }; i < set_size; ++i) {
 			do {

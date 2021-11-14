@@ -36,7 +36,7 @@ namespace motor::log {
 		return result;
 	}
 
-	core::vector<LoggerBase*> LoggerBase::s_loggers{ };
+	core::Vector<LoggerBase*> LoggerBase::s_loggers{ };
 
 	const charT* ToString(Level level)
 	{

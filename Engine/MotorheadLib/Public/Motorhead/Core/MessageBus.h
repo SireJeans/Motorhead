@@ -58,8 +58,8 @@ namespace motor::core {
 
     private:
         sizeT m_index = 0;
-        //core::map<sizeT , std::function<void(M)>> m_subscribers;
-        core::map<sizeT , core::Delegate<void(M)>> m_subscribers;
+        //core::Map<sizeT , std::function<void(M)>> m_subscribers;
+        core::Map<sizeT , core::Delegate<void(M)>> m_subscribers;
     };
 
     template<typename M>
@@ -145,7 +145,7 @@ namespace motor::core {
         [[nodiscard]] bool Validate(SubscriberHandle handle) const;
 
     private:
-        core::map<Message::id, core::UniquePtr<MessageContainerBase>> m_repository;
+        core::Map<Message::id, core::UniquePtr<MessageContainerBase>> m_repository;
     };
 
     template<typename M>

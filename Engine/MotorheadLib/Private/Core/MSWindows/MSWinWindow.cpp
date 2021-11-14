@@ -14,8 +14,8 @@ namespace motor::platform {
 			bool	is_closed{ false };
 		};
 
-		core::vector<WindowInfo>	windows;
-		core::vector<u32>			free_slots;
+		core::Vector<WindowInfo>	windows;
+		core::Vector<u32>			free_slots;
 		
 		u32 AddToWindows(WindowInfo info) {
 			u32 id{ u32_invalid_val };

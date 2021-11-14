@@ -7,8 +7,8 @@ namespace motor::ecs {
 
 	namespace {
 
-		core::vector<id::genid_type>			generations;
-		core::deque<entity_id>				free_ids;
+		core::Vector<id::genid_type>			generations;
+		core::Deque<entity_id>				free_ids;
 
 	}
 

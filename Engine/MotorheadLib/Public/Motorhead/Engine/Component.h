@@ -43,10 +43,10 @@ namespace motor::ecs {
 		}
 
 	private:
-		static core::vector<IComponent*> _register;
+		static core::Vector<IComponent*> _register;
 	};
 
-	core::vector<IComponent*> ComponentRegistry::_register;
+	core::Vector<IComponent*> ComponentRegistry::_register;
 
 	template<typename INFO, typename ID>
 	class ComponentBase : public IComponent {
@@ -92,14 +92,14 @@ namespace motor::ecs {
 		}
 
 	protected:
-		static core::vector<INFO>			_data;
-		static core::vector<ID>				_ids;
+		static core::Vector<INFO>			_data;
+		static core::Vector<ID>				_ids;
 		static ComponentBase<INFO,ID>		_instance;
 		static const INFO					_default_info;
 	};
 
-	template<typename INFO, typename ID> core::vector<INFO> ComponentBase<INFO, ID>::_data;
-	template<typename INFO, typename ID> core::vector<ID> ComponentBase<INFO, ID>::_ids;
+	template<typename INFO, typename ID> core::Vector<INFO> ComponentBase<INFO, ID>::_data;
+	template<typename INFO, typename ID> core::Vector<ID> ComponentBase<INFO, ID>::_ids;
 	template<typename INFO, typename ID> ComponentBase<INFO, ID> ComponentBase<INFO, ID>::_instance;
 	template<typename INFO, typename ID> const INFO ComponentBase<INFO, ID>::_default_info;
 
