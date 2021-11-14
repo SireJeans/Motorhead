@@ -2,32 +2,32 @@
 #define TEST_COMPONENT 0
 #define TEST_RANDOM 0
 #define TEST_HASH 0
-#define TEST_STRING 0
+#define TEST_STRING 1
 #define TEST_WINDOW 0
 #define TEST_DELEGATE 0
 #define TEST_MESSAGEBUS 0
 #define TEST_LOGGING 0
-#define TEST_PFMEM 1
+#define TEST_PFMEM 0
 
-#if TEST_ENTITY == 1
+#if TEST_ENTITY
 #include "Engine/TestEntity.h"
-#elif TEST_COMPONENT == 1
+#elif TEST_COMPONENT
 #include "Engine/TestComponent.h"
-#elif TEST_RANDOM == 1
+#elif TEST_RANDOM
 #include "Core/TestRandom.h"
-#elif TEST_HASH == 1
+#elif TEST_HASH
 #include "Core/TestHash.h"
-#elif TEST_STRING == 1
+#elif TEST_STRING
 #include "Core/TestString.h"
-#elif TEST_WINDOW == 1
+#elif TEST_WINDOW
 #include "Platform/TestWindow.h"
-#elif TEST_DELEGATE == 1
+#elif TEST_DELEGATE
 #include "Core/TestDelegate.h"
-#elif TEST_MESSAGEBUS == 1
+#elif TEST_MESSAGEBUS
 #include "Core/TestMessageBus.h"
-#elif TEST_LOGGING == 1
+#elif TEST_LOGGING
 #include "Core/TestLogging.h"
-#elif TEST_PFMEM == 1
+#elif TEST_PFMEM
 #include "Platform/TestPFMem.h"
 #else
 #error One of the test must be enabled

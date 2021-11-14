@@ -5,8 +5,8 @@ namespace motor::core {
 
 	namespace {
 
-		core::hash_map<StringID, string> string_table;
-		core::hash_map<StringID, wstring> wstring_table;
+		core::hash_map<StringID, core::String> string_table;
+		core::hash_map<StringID, core::WString> wstring_table;
 	}
 
 	u32 StrLen(const charA* str) {
@@ -37,36 +37,36 @@ namespace motor::core {
 		return StrLen(str) * sizeof(charW);
 	}
 
-	core::string GetStringFromTable(StringID id) {
+	core::String GetStringFromTable(StringID id) {
 		assert(id != stringid_invalid);
 		return string_table[id];
 	}
 
-	core::wstring GetWideStrFromTable(StringID id) {
+	core::WString GetWideStrFromTable(StringID id) {
 		assert(id != stringid_invalid);
 		return wstring_table[id];
 	}
 
 
-	StringID InternString(const string str) {
+	StringID InternString(const core::String str) {
 		StringID id{ stringid_invalid };
 
 		id = (StringID)hash::GetCrc(0, (u8*)str.c_str(), str.size());
 
 		if (!string_table.contains(id)) {
-			string_table[id] = core::string(str);
+			string_table[id] = core::String(str);
 		}
 
 		return id;
 	}
 
-	StringID InternString(const wstring str) {
+	StringID InternString(const core::WString str) {
 		StringID id{ stringid_invalid };
 
 		id = (StringID)hash::GetCrc(0, (u8*)str.c_str(), str.size());
 
 		if (!string_table.contains(id)) {
-			wstring_table[id] = core::wstring(str);
+			wstring_table[id] = core::WString(str);
 		}
 
 		return id;
@@ -80,7 +80,7 @@ namespace motor::core {
 		id = (StringID)hash::GetCrc(0, (u8*)str, len);
 
 		if (!string_table.contains(id)) {
-			string_table[id] = core::string(str);
+			string_table[id] = core::String(str);
 		}
 		
 		return id;
@@ -94,7 +94,7 @@ namespace motor::core {
 		id = (StringID)hash::GetCrc(0, (u8*)str, len);
 
 		if (!string_table.contains(id)) {
-			wstring_table[id] = core::wstring(str);
+			wstring_table[id] = core::WString(str);
 		}
 
 		return id;

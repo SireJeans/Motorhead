@@ -8,22 +8,22 @@
 
 namespace motor::core {
 
-	using string = std::string;
-	using wstring = std::wstring;
+	using String = std::string;
+	using WString = std::wstring;
 	using StringID = u32;
 
 	constexpr StringID stringid_invalid{ ((StringID)-1) };
 
-	StringID InternString(const string);
-	StringID InternString(const wstring);
+	StringID InternString(const core::String);
+	StringID InternString(const core::WString);
 	StringID InternString(const charA*);
 	StringID InternString(const charW*);
 	u32 StrLen(const charA*);
 	u32 StrLen(const charW*);
 	u32 StrByteLen(const charA*);
 	u32 StrByteLen(const charW*);
-	core::string GetStringFromTable(StringID id);
-	core::wstring GetWideStrFromTable(StringID id);
+	core::String GetStringFromTable(StringID id);
+	core::WString GetWideStrFromTable(StringID id);
 
 	namespace {
 
@@ -39,7 +39,23 @@ namespace motor::core {
 			template <core::sizeT N>
 			constexpr static inline u32 Generate(const charW(&str)[N])
 			{
+				//u8* tmp = (u8*)str[I - 1u];
+
+				//u32 intermediate = static_cast<u32>(static_cast<u64>(CompileHash<I - 1u>::Generate(str) ^ u32(tmp)) * 16777619ull);
+				//result = static_cast<u64>(CompileHash<I - 1u>::Generate(str) ^ u32(str[I - 1u])) * 16777619ull
 				return static_cast<u32>(static_cast<u64>(CompileHash<I - 1u>::Generate(str) ^ u32(str[I - 1u])) * 16777619ull);
+			}
+
+			template <core::sizeT N>
+			constexpr static inline u64 Generate64(const charA(&str)[N])
+			{
+				return static_cast<u64>(CompileHash<I - 1u>::Generate64(str) ^ u64(str[I - 1u])) * 1099511628211ull;
+			}
+
+			template <core::sizeT N>
+			constexpr static inline u64 Generate64(const charW(&str)[N])
+			{
+				return static_cast<u64>(CompileHash<I - 1u>::Generate64(str) ^ u64(str[I - 1u])) * 1099511628211ull;
 			}
 
 		};
@@ -58,6 +74,19 @@ namespace motor::core {
 			{
 				return 2166136261u;
 			}
+
+			template <core::sizeT N>
+			constexpr static inline u64 Generate64(const charA(&str)[N])
+			{
+				return 14695981039346656037ull;
+			}
+
+			template <core::sizeT N>
+			constexpr static inline u64 Generate64(const charW(&str)[N])
+			{
+				return 14695981039346656037ull;
+			}
+
 		};
 
 
@@ -132,12 +161,12 @@ namespace motor::core {
 		}
 
 #if USE_UTF16OR32
-		const core::wstring Str() const
+		const core::WString Str() const
 		{
 			return m_str;
 		}
 #else
-		const core::string Str() const
+		const core::String Str() const
 		{
 			return m_str;
 		}
@@ -146,9 +175,9 @@ namespace motor::core {
 	private:
 		const u32			m_hash;
 #if USE_UTF16OR32
-		const core::wstring	m_str;
+		const core::WString	m_str;
 #else
-		const core::string	m_str;
+		const core::String	m_str;
 #endif
 	};
 }
