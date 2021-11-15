@@ -2,12 +2,13 @@
 #define TEST_COMPONENT 0
 #define TEST_RANDOM 0
 #define TEST_HASH 0
-#define TEST_STRING 1
+#define TEST_STRING 0
 #define TEST_WINDOW 0
 #define TEST_DELEGATE 0
 #define TEST_MESSAGEBUS 0
 #define TEST_LOGGING 0
 #define TEST_PFMEM 0
+#define TEST_BITOPS 1
 
 #if TEST_ENTITY
 #include "Engine/TestEntity.h"
@@ -29,6 +30,8 @@
 #include "Core/TestLogging.h"
 #elif TEST_PFMEM
 #include "Platform/TestPFMem.h"
+#elif TEST_BITOPS
+#include "Core/TestBitOps.h"
 #else
 #error One of the test must be enabled
 #endif
