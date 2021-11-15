@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Public\Motorhead\Common.h" />
+    <ClInclude Include="Public\Motorhead\Core\BitOps.h" />
     <ClInclude Include="Public\Motorhead\Core\Build.h" />
     <ClInclude Include="Public\Motorhead\Core\Containers.h" />
     <ClInclude Include="Public\Motorhead\Core\CoreCommon.h" />

@@ -18,3 +18,4 @@
 // Minimal
 #include "PrimitiveTypes.h"
 #include "MotorMath.h"
+#include "BitOps.h"

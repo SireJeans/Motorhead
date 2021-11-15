@@ -43,6 +43,9 @@
     <ClInclude Include="Platform\TestPFMem.h">
       <Filter>Platform</Filter>
     </ClInclude>
+    <ClInclude Include="Core\TestBitOps.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
