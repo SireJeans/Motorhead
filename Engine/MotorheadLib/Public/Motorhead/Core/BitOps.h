@@ -222,5 +222,4 @@ namespace motor::bits {
 	using Ops32 = Ops<32>;
 	using Ops64 = Ops<64>;
 
-
 }

@@ -3,6 +3,7 @@
 #include <stdint.h>
 #include <assert.h>
 #include <type_traits>
+#include <variant>
 #include <vector>
 #include <deque>
 #include <map>

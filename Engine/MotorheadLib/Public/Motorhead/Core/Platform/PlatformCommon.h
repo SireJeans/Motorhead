@@ -1,5 +1,6 @@
 #pragma once
 
+#include "PlatformMemory.h"
 #include "Window.h"
 
 #ifdef PLATFORM_WIN64

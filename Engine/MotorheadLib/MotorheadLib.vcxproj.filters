@@ -140,7 +140,7 @@
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinIncludes.h">
       <Filter>Public\Motorhead\Core\MSWindows</Filter>
     </ClInclude>
-    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h">
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformMemory.h">
       <Filter>Public\Motorhead\Core\MSWindows</Filter>
     </ClInclude>
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinWindow.h">
@@ -161,5 +161,6 @@
     <ClInclude Include="Public\Motorhead\Core\BitOps.h">
       <Filter>Public\Motorhead\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinMemory.h" />
   </ItemGroup>
 </Project>

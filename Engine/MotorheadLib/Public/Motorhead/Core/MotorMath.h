@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 
+#include <DirectXMath.h>
+
 namespace motor::math {
 
 	constexpr f32 pi = 3.14159265358979323846f;

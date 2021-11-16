@@ -44,7 +44,8 @@
     <ClInclude Include="Public\Motorhead\Core\MotorString.h" />
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinIncludes.h" />
-    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinPlatform.h" />
+    <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinMemory.h" />
+    <ClInclude Include="Public\Motorhead\Core\Platform\PlatformMemory.h" />
     <ClInclude Include="Public\Motorhead\Core\MSWindows\MSWinWindow.h" />
     <ClInclude Include="Public\Motorhead\Core\Platform\PlatformCommon.h" />
     <ClInclude Include="Public\Motorhead\Core\Platform\PlatformDefines.h" />

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Motorhead/Core/CoreCommon.h"
-#include "Motorhead/Core/MSWindows/MSWinCommon.h"
 #include "../Test.h"
 
 using namespace motor;
@@ -26,7 +25,13 @@ public:
 			platform::Set(blockSrc, 'B', 10);
 			platform::Free(blockSrc);
 			platform::Free(blockDest);
-			platform::Free(nullptr); 
+			platform::Free(nullptr);
+
+			mem::SmallBlockPage<6 * 1024>();
+			mem::MediumBlockPage<6 * 1024>();
+
+			mem::FastMemManager<32, 32, 128, 256, 4096, platform::DefaultMemApi> fmm;
+
 			PrintResult();
 		} while (getchar() != 'q');
 	}

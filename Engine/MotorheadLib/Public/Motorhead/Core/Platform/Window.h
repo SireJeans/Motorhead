@@ -1,6 +1,9 @@
 #pragma once
 
-#include "Motorhead/Core/CoreCommon.h"
+//#include "Motorhead/Core/CoreMinimal.h"
+#include "CoreCommon.h"
+#include "GenerationalID.h"
+
 
 namespace motor::platform {
 

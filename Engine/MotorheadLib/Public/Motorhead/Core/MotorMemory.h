@@ -1,18 +1,21 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Platform/PlatformCommon.h"
+#include "Containers.h"
+#include "Platform/PlatformMemory.h"
 
 namespace motor::mem {
 
-	enum class Tag : u8
+	enum class MemTag : u8
 	{
 		Unknown = 0,
 
 		NumTags
 	};
 
-	void* Alloc(core::sizeT, Tag = Tag::Unknown);
-	void Free(void*, core::sizeT, Tag);
+	void* Alloc(core::sizeT, MemTag = MemTag::Unknown);
+	void Free(void*, core::sizeT, MemTag = MemTag::Unknown);
 	void Zero(void*, core::sizeT);
 	void Copy(void*, const void*, core::sizeT);
 	void Set(void*, sint, core::sizeT);
@@ -25,7 +28,7 @@ namespace motor::mem {
 		{
 			u32					free_count;
 			u32					block_count;
-			u8*					bitfield;
+			unint*				bitfield;
 			u16					block_size;
 		};
 
@@ -73,4 +76,153 @@ namespace motor::mem {
 
 		};
 	};
+
+
+	template<core::sizeT MinSmallAlloc
+		, core::sizeT SmallAllocStepSize
+		, core::sizeT MinMediumAlloc
+		, core::sizeT MediumAllocStepSize
+		, core::sizeT MinLargeAlloc
+		, class Api>
+	struct FastMemManager
+	{
+	public:
+
+		FastMemManager(void);
+		~FastMemManager(void);
+
+		void* Alloc(core::sizeT size, MemTag tag = MemTag::Unknown);
+		bool Free(void* ptr, MemTag tag = MemTag::Unknown);
+
+	private:
+
+		static const core::sizeT small_page_size = Api::k_small_page_size;
+		static const core::sizeT medium_page_size = Api::k_medium_page_size;
+
+		static const core::sizeT num_small_pages = (MinMediumAlloc - MinSmallAlloc + SmallAllocStepSize - 1) / SmallAllocStepSize;
+		static const core::sizeT num_medium_pages = medium_page_size / MediumAllocStepSize;
+
+		using SBPType = SmallBlockPage<small_page_size>;
+		using MBPType = MediumBlockPage<medium_page_size>;
+
+		core::List<SBPType*> m_small_pages[num_small_pages];
+		core::List<SBPType*> m_small_pages_full[num_small_pages];
+		core::List<MBPType*> m_medium_pages[num_medium_pages];
+
+		// Total
+		unint m_small_memory_allocated;
+		unint m_medium_memory_allocated;
+		unint m_large_memory_allocated;
+
+		unint m_small_allocations;
+		unint m_medium_allocations;
+		unint m_large_allocations;
+
+		Api		m_mem_api;
+
+	};
+
+	template<core::sizeT MinSmallAlloc
+		, core::sizeT SmallAllocStepSize
+		, core::sizeT MinMediumAlloc
+		, core::sizeT MediumAllocStepSize
+		, core::sizeT MinLargeAlloc
+		, class Api>
+	FastMemManager<MinSmallAlloc
+		, SmallAllocStepSize
+		, MinMediumAlloc
+		, MediumAllocStepSize
+		, MinLargeAlloc
+		, Api>::FastMemManager(void)
+	{
+		m_small_memory_allocated = 0;
+		m_medium_memory_allocated = 0;
+		m_large_memory_allocated = 0;
+
+		m_small_allocations = 0;
+		m_medium_allocations = 0;
+		m_large_allocations = 0;
+	}
+
+	template<core::sizeT MinSmallAlloc
+		, core::sizeT SmallAllocStepSize
+		, core::sizeT MinMediumAlloc
+		, core::sizeT MediumAllocStepSize
+		, core::sizeT MinLargeAlloc
+		, class Api>
+	FastMemManager<MinSmallAlloc
+		, SmallAllocStepSize
+		, MinMediumAlloc
+		, MediumAllocStepSize
+		, MinLargeAlloc
+		, Api>::~FastMemManager(void)
+	{
+		// TODO: Display memory leaks and try freeing them before destruction. 
+		for (unint i = 0; i < num_small_pages; ++i)
+		{
+			for (auto var : m_small_pages[i])
+			{
+
+			}
+			for (auto var : m_small_pages_full[i])
+			{
+
+			}
+		}		
+		for (unint i = 0; i < num_medium_pages; ++i)
+		{
+			for (auto var : m_medium_pages[i])
+			{
+
+			}
+		}
+	}
+
+	template<core::sizeT MinSmallAlloc
+		, core::sizeT SmallAllocStepSize
+		, core::sizeT MinMediumAlloc
+		, core::sizeT MediumAllocStepSize
+		, core::sizeT MinLargeAlloc
+		, class Api>
+	void* FastMemManager<MinSmallAlloc
+		, SmallAllocStepSize
+		, MinMediumAlloc
+		, MediumAllocStepSize
+		, MinLargeAlloc
+		, Api>::Alloc(core::sizeT size, MemTag tag)
+	{
+		if (size < MinMediumAlloc)
+		{
+			// Small block allocation
+		}
+		else if (size < MinLargeAlloc)
+		{
+			// Medium block allocation
+		}
+		else
+		{
+			// Large block allocation
+			m_large_memory_allocated += size;
+			++m_large_allocations;
+		}
+
+
+	}
+
+	template<core::sizeT MinSmallAlloc
+		, core::sizeT SmallAllocStepSize
+		, core::sizeT MinMediumAlloc
+		, core::sizeT MediumAllocStepSize
+		, core::sizeT MinLargeAlloc
+		, class Api>
+	bool FastMemManager<MinSmallAlloc
+		, SmallAllocStepSize
+		, MinMediumAlloc
+		, MediumAllocStepSize
+		, MinLargeAlloc
+		, Api>::Free(void* ptr, MemTag tag)
+	{
+
+	}
+
 }

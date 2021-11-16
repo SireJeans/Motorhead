@@ -3,21 +3,21 @@
 
 namespace motor::mem {
 
-	struct MemoryStats {
+	struct MotorMemoryStats {
 		u64	total_alloc;
-		u64 tagged_alloc[(u8)Tag::NumTags];
+		u64 tagged_alloc[(u8)MemTag::NumTags];
 	};
 
 	namespace {
-		MemoryStats stats;
+		MotorMemoryStats stats;
 
-		const charT* mem_tag_strings[(u8)Tag::NumTags] =
+		const charT* mem_tag_strings[(u8)MemTag::NumTags] =
 		{
 			TXT("UNKNOWN")
 		};
 	}
 
-	void* Alloc(core::sizeT size, Tag tag)
+	void* Alloc(core::sizeT size, MemTag tag)
 	{
 		stats.total_alloc += size;
 		stats.tagged_alloc[(u8)tag] += size;
@@ -29,7 +29,7 @@ namespace motor::mem {
 		return block;
 	}
 
-	void Free(void* block, core::sizeT size, Tag tag)
+	void Free(void* block, core::sizeT size, MemTag tag)
 	{
 		stats.total_alloc -= size;
 		stats.tagged_alloc[(u8)tag] -= size;
