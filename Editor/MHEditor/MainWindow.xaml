@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:MHEditor"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280" MinHeight="480" MinWidth="720"
-        WindowStartupLocation="CenterScreen"
-        Style="{StaticResource MotorWindowStyle}">
+        Style="{StaticResource MotorWindowStyle}"
+        WindowStartupLocation="CenterScreen">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Fichier">
