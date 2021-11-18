@@ -26,10 +26,9 @@ namespace motor::mem {
 	protected:
 		struct Tail
 		{
-			u32					free_count;
-			u32					block_count;
-			unint*				bitfield;
-			u16					block_size;
+			u32			free_count;
+			u32			block_count;
+			u16			block_size;
 		};
 
 	public:
@@ -38,6 +37,11 @@ namespace motor::mem {
 		bool	Free(void* ptr, bool* was_full);
 
 		Tail* GetTail(void) const { return (Tail*)((u8*)this + s_tail_offset); }
+		unint*	GetBits(void) const { return (unint*)(this + s_tail_offset - ((GetBlockCount() + sizeof(unint) * 8) / (sizeof(unint) * 8)) * sizeof(unint)); }
+
+		inline u16 GetBlockSize() const;
+		inline u32 GetBlockCount() const;
+		inline u32 GetFreeCount() const;
 
 	protected:
 
@@ -53,16 +57,44 @@ namespace motor::mem {
 		Tail* tail = GetTail();
 
 		const unint max_block_per_page = (PageSize - sizeof(Tail)) / block_size;
-		const unint bytes_required_for_tail = (max_block_per_page + sizeof(unint) * 8) / (sizeof(unint) * 8) * sizeof(unint) + sizeof(Tail);
+		const unint bytes_required_for_tail = ((max_block_per_page + sizeof(unint) * 8) / (sizeof(unint) * 8)) * sizeof(unint) + sizeof(Tail);
 		const unint num_blocks = (PageSize - bytes_required_for_tail) / block_size;
-		const unint num_bytes_in_bitfield = (num_blocks + sizeof(unint) * 8) / (sizeof(unint) * 8) * sizeof(unint);
+		const unint num_bytes_in_bitfield = ((num_blocks + sizeof(unint) * 8) / (sizeof(unint) * 8)) * sizeof(unint);
 
 		tail->block_size = (u16)block_size;
 		tail->block_count = num_blocks;
 		tail->free_count = num_blocks;
-		tail->bitfield = (u8*)tail - num_bytes_in_bitfield;
 
+		unint* bits = GetBits();
+		if (sizeof(unint) == 4)
+		{
+			bits::Ops32::SetRange1(bits, 0, num_blocks);
+		}
+		else if (sizeof(unint) == 8)
+		{
+			bits::Ops64::SetRange1(bits, 0, num_blocks);
+		}
 		//TODO: Finish implementation
+
+	}
+
+	
+	template <core::sizeT PageSize>
+	inline u16 SmallBlockPage<PageSize>::GetBlockSize() const
+	{
+		return GetTail()->m_block_size;
+	}
+
+	template <core::sizeT PageSize>
+	inline u32 SmallBlockPage<PageSize>::GetBlockCount() const
+	{
+		return GetTail()->m_block_count;
+	}
+
+	template <core::sizeT PageSize>
+	inline u32 SmallBlockPage<PageSize>::GetFreeCount() const
+	{
+		return GetTail()->m_free_count;
 	}
 
 	template<core::sizeT PageSize>

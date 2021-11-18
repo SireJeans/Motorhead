@@ -114,7 +114,7 @@ namespace motor::bits {
 			*bits = *bits & ((Type)1 << bit_number);
 		}
 
-		static constexpr Type SetRange0(Type bits, core::sizeT start, core::sizeT range)
+		static constexpr Type SetWordRange0(Type bits, core::sizeT start, core::sizeT range)
 		{
 			assert(start < sizeof(Type) * 8);
 			assert(range + start < (sizeof(Type) * 8 + 1));
@@ -122,7 +122,7 @@ namespace motor::bits {
 			return bits & ~(~(~(Type)0 << range) << start);
 		}
 
-		static constexpr void SetRange0(Type* bits, core::sizeT start, core::sizeT range)
+		static constexpr void SetWordRange0(Type* bits, core::sizeT start, core::sizeT range)
 		{
 			assert(start < sizeof(Type) * 8);
 			assert(range + start < (sizeof(Type) * 8 + 1));
@@ -130,7 +130,7 @@ namespace motor::bits {
 			*bits = *bits & ~(~(~(Type)0 << range) << start);
 		}
 
-		static constexpr Type SetRange1(Type bits, core::sizeT start, core::sizeT range)
+		static constexpr Type SetWordRange1(Type bits, core::sizeT start, core::sizeT range)
 		{
 			assert(start < sizeof(Type) * 8);
 			assert(range + start < (sizeof(Type) * 8 + 1));
@@ -138,12 +138,98 @@ namespace motor::bits {
 			return bits | (~(~(Type)0 << range) << start);
 		}
 
-		static constexpr void SetRange1(Type* bits, core::sizeT start, core::sizeT range)
+		static constexpr void SetWordRange1(Type* bits, core::sizeT start, core::sizeT range)
 		{
 			assert(start < sizeof(Type) * 8);
 			assert(range + start < (sizeof(Type) * 8 + 1));
 
 			*bits = *bits | (~(~(Type)0 << range) << start);
+		}
+
+		static constexpr void SetRange1(void* bits, core::sizeT start, core::sizeT range)
+		{
+			Type* ptr = ((Type*)bits + start / (sizeof(Type) * 8));
+
+			core::sizeT bits_left_in_word = (sizeof(Type) * 8) - (start & ((sizeof(Type) * 8) - 1));
+
+			if (bits_left_in_word > range)
+			{
+				SetWordRange1(ptr, start & ((sizeof(Type) * 8) - 1), range);
+			}
+			else
+			{
+				SetHigher(ptr, start & ((sizeof(Type) * 8) - 1));
+				++ptr;
+				range -= bits_left_in_word;
+				while (range >= (sizeof(Type) * 8))
+				{
+					*ptr = (Type)0xFFFFFFFFFFFFFFFF;
+					++ptr;
+					range -= (sizeof(Type) * 8);
+				}
+
+				if (range > 0)
+				{
+					SetLower(ptr, range);
+				}
+			}
+		}
+
+		static constexpr void SetRange0(void* bits, core::sizeT start, core::sizeT range)
+		{
+			Type* ptr = ((Type*)bits + start / (sizeof(Type) * 8));
+
+			core::sizeT bits_left_in_word = (sizeof(Type) * 8) - (start & ((sizeof(Type) * 8) - 1));
+
+			if (bits_left_in_word > range)
+			{
+				SetWordRange0(ptr, start & ((sizeof(Type) * 8) - 1), range);
+			}
+			else
+			{
+				ClearHigher(ptr, start & ((sizeof(Type) * 8) - 1));
+				++ptr;
+				range -= bits_left_in_word;
+				while (range >= (sizeof(Type) * 8))
+				{
+					*ptr = (Type)0;
+					++ptr;
+					range -= (sizeof(Type) * 8);
+				}
+
+				if (range > 0)
+				{
+					ClearLower(ptr, range);
+				}
+			}
+		}
+
+		static constexpr Type SetHigher(Type bits, core::sizeT bit_number)
+		{
+			assert(bit_number < sizeof(Type) * 8);
+
+			return bits | (~(Type)0 << bit_number);
+		}
+
+		static constexpr void SetHigher(Type* bits, core::sizeT bit_number)
+		{
+			assert(bit_number < sizeof(Type) * 8);
+
+			*bits = *bits | (~(Type)0 << bit_number);
+		}
+
+		static constexpr Type SetLower(Type bits, core::sizeT bit_number)
+		{
+			assert(bit_number < sizeof(Type) * 8);
+
+			return bits | ~(~(Type)0 << bit_number);
+		}
+
+		static constexpr void SetLower(Type* bits, core::sizeT bit_number)
+		{
+			assert(bit_number < sizeof(Type) * 8);
+
+			*bits = *bits | ~(~(Type)0 << bit_number);
 		}
 
 		static constexpr Type Clear(Type bits, core::sizeT bit_number)

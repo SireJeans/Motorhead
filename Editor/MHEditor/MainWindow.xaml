@@ -5,8 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MHEditor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="720" Width="1280" MinHeight="480" MinWidth="720"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource MotorWindowStyle}">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Fichier">
+                <MenuItem Header="Nouveau..."/>
+                <MenuItem Header="Ouvrir..."/>
+                <Separator/>
+                <MenuItem Header="Quitter"/>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Button>blabla</Button>
+                <Button>popo</Button>
+            </ToolBar>
+        </ToolBarTray>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem Width="75">
+                
+            </StatusBarItem>
+            <Separator />
+            <StatusBarItem>
+                <ProgressBar Width="100" Height="15"></ProgressBar>
+            </StatusBarItem>
+            <Separator/>
+        </StatusBar>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition MinWidth="200" Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition MinHeight="150" Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="200" Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                    
+                    </Grid>
+                    <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Left"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                
+                </Grid>
+                <GridSplitter Grid.Row="1" Height="5" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Left"/>
+            <Grid Grid.Column="1">
+                <GridSplitter Grid.Row="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+            </Grid>
+        </Grid>
+    </DockPanel>
 </Window>

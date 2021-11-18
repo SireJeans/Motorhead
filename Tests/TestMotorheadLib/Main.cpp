@@ -7,8 +7,8 @@
 #define TEST_DELEGATE 0
 #define TEST_MESSAGEBUS 0
 #define TEST_LOGGING 0
-#define TEST_PFMEM 1
-#define TEST_BITOPS 0
+#define TEST_PFMEM 0
+#define TEST_BITOPS 1
 
 #if TEST_ENTITY
 #include "Engine/TestEntity.h"
